@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+
+
+% Use wide margins, but not quite so wide as fullpage.sty
+\marginparwidth 0.5in 
+\oddsidemargin 0.25in 
+\evensidemargin 0.25in 
+\marginparsep 0.25in
+\topmargin 0.25in 
+\textwidth 6in \textheight 8 in
+% That's about enough definitions
+
+% multirow allows you to combine rows in columns
+\usepackage{multirow}
+% tabularx allows manual tweaking of column width
+\usepackage{tabularx}
+% longtable does better format for tables that span pages
+\usepackage{longtable}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+
+\lstset{language=Matlab}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+	\vspace*{\stretch{1.0}}
+	\begin{center}
+		\Large\textbf{ASP Report: Section 1}\\
+		\large\textit{Yiren (Aaron) Zhao}
+	\end{center}
+	\vspace*{\stretch{2.0}}
+\end{titlepage}
+
+\section{Statistical estimation}
+\subsection{Sample mean}
+To generate a uniform random variable $X\sim\mathcal{U}(0,\,1)$, we need to recall the \textbf{rand} function in Matlab, thus we obtain a vector of samples, denoted by $x[n] = [x[1],x[2]...x[1000]]^{T}$. In order to help us understand and uniform the representation of later calculations, we recall the probability density function of uniform distribution, denoted by $f(x)$, is defined as: \\
+\begin{equation}
+f(x) = \frac{1}{b-a} \quad \textbf{for} \quad a \leq x \leq b
+\end{equation}  
+For the generated samples, the value of $a$ and $b$ are respectively 0 and 1.\\
+\\
+We applied this function to generate 1000 samples in order to investigate the difference and relationship between theoretical mean and sample mean. We denote symbol $E(X)$ to represent the expected value of given random variable $X$, and $m$ is used to represent the theoretical mean. Therefore, we conclude an obvious relationship that is $m = E(X)$. We define that sample mean as $\hat{m}$, similarly, $\hat{m} = E(\hat{X})$. The uniform distribution is a continuous probability distribution, therefore, we define a theoretical mean for a continuous random variable $X$ as following:\\
+\begin{equation}
+m = E(X)=\int_{-\infty}^\infty xf(x) \mathrm{d}x
+\end{equation}
+We also define the sample mean equation as:\\
+\begin{equation}
+\hat{m} = E(\hat{X}) = \frac{1}{N} \sum_{n=1}^{N} x[n]
+\end{equation}
+The sampled mean is being treated as discrete data. Notice the summation starts from index 1, this is because in Matlab the first element of a vector corresponds to an index of 1. 
+
+
+
+\section{Stochastic Process}
+\section{Estimation of Probability distribution}
+
+
+
+\end{document}          
